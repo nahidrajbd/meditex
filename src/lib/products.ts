@@ -1,3 +1,7 @@
+import abdominalSupportImage from "@/assets/arshi_meditex_abdominal_support_model.png";
+import lumbarSupportImage from "@/assets/arshi_meditex_lumbar_support_model.png";
+import type { StaticImageData } from "next/image";
+
 export type Product = {
   slug: string;
   name: string;
@@ -5,12 +9,14 @@ export type Product = {
   intro: string;
   features: string[];
   idealFor: string;
+  image: StaticImageData;
 };
 
 export const products: Product[] = [
   {
     slug: "c-section-abdominal-belt",
     name: "C-Section Abdominal Belt",
+    image: abdominalSupportImage,
     tagline: "Comfortable Abdominal Support for Post-C-Section Use",
     intro:
       "Our C-Section Abdominal Belt is designed to provide comfortable support around the abdominal area after C-section surgery.",
@@ -27,6 +33,7 @@ export const products: Product[] = [
   {
     slug: "lumbar-support-belt",
     name: "Lumbar Support Belt",
+    image: lumbarSupportImage,
     tagline: "Reliable Support for the Lower Back",
     intro:
       "Our Lumbar Support Belt is designed to provide comfortable support around the lower back and waist. Its adjustable design helps provide a secure and comfortable fit.",

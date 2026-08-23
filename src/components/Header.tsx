@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import Button from "./Button";
 
@@ -19,10 +20,15 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-primary/10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-primary-dark">
-              Arshi<span className="text-accent">MediTex</span>
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.svg"
+              alt="Arshi MediTex"
+              width={188}
+              height={47}
+              priority
+              className="h-9 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">

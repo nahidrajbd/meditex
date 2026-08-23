@@ -1,6 +1,8 @@
 import Button from "@/components/Button";
 import Placeholder from "@/components/Placeholder";
+import Image from "next/image";
 import Link from "next/link";
+import { products } from "@/lib/products";
 
 const trustPoints = [
   { title: "10+ Years of Experience", desc: "Medical textile manufacturing and supply" },
@@ -9,18 +11,10 @@ const trustPoints = [
   { title: "Competitive Pricing", desc: "Factory-direct pricing for bulk buyers" },
 ];
 
-const products = [
-  {
-    slug: "c-section-abdominal-belt",
-    name: "C-Section Abdominal Belt",
-    desc: "Comfortable abdominal support designed for post-C-section use.",
-  },
-  {
-    slug: "lumbar-support-belt",
-    name: "Lumbar Support Belt",
-    desc: "Adjustable support designed for the lower back and waist.",
-  },
-];
+const productSummaries: Record<string, string> = {
+  "c-section-abdominal-belt": "Comfortable abdominal support designed for post-C-section use.",
+  "lumbar-support-belt": "Adjustable support designed for the lower back and waist.",
+};
 
 const manufacturingPoints = [
   "Manufactured in Bangladesh",
@@ -84,11 +78,19 @@ export default function Home() {
                 href={`/products/${product.slug}`}
                 className="group rounded-2xl bg-white p-6 border border-primary/10 hover:shadow-lg transition-shadow"
               >
-                <Placeholder label={product.name} className="h-48" />
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-light">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                  />
+                </div>
                 <h3 className="mt-5 text-xl font-semibold text-primary-dark group-hover:text-primary">
                   {product.name}
                 </h3>
-                <p className="mt-2 text-sm text-foreground/60">{product.desc}</p>
+                <p className="mt-2 text-sm text-foreground/60">{productSummaries[product.slug]}</p>
               </Link>
             ))}
           </div>

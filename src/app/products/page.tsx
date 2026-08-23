@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/Button";
-import Placeholder from "@/components/Placeholder";
 import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
@@ -35,7 +35,15 @@ export default function ProductsPage() {
               href={`/products/${product.slug}`}
               className="group rounded-2xl bg-white p-6 border border-primary/10 hover:shadow-lg transition-shadow"
             >
-              <Placeholder label={product.name} className="h-56" />
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-light">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
+              </div>
               <h2 className="mt-5 text-xl font-semibold text-primary-dark group-hover:text-primary">
                 {product.name}
               </h2>

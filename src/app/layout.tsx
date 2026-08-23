@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Arshi MediTex | Medical Textile Manufacturer & Supplier",
   description:
     "Arshi MediTex is a medical textile manufacturer and supplier based in Rajshahi, Bangladesh, producing quality support products for hospitals, clinics, pharmacies, distributors, and healthcare businesses.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

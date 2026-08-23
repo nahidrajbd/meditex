@@ -89,7 +89,7 @@ export default function Home() {
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-light">
                   <Image
-                    src={product.image}
+                    src={product.homeImage}
                     alt={product.name}
                     fill
                     className="object-cover"

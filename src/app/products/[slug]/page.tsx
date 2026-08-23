@@ -37,7 +37,7 @@ export default async function ProductPage({
         <ProductGallery
           name={product.name}
           image={product.image}
-          galleryImage={product.galleryImage}
+          galleryImages={product.galleryImages}
         />
         <div>
           <h1 className="text-3xl font-bold text-primary-dark">{product.name}</h1>

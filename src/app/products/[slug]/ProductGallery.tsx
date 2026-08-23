@@ -6,17 +6,20 @@ import Image, { type StaticImageData } from "next/image";
 type ProductGalleryProps = {
   name: string;
   image: StaticImageData;
-  galleryImage: StaticImageData;
+  galleryImages: StaticImageData[];
 };
 
 export default function ProductGallery({
   name,
   image,
-  galleryImage,
+  galleryImages,
 }: ProductGalleryProps) {
   const images = [
     { src: image, alt: name },
-    { src: galleryImage, alt: `${name} being worn` },
+    ...galleryImages.map((src, i) => ({
+      src,
+      alt: `${name} being worn ${i + 1}`,
+    })),
   ];
   const [active, setActive] = useState(0);
 
@@ -38,7 +41,7 @@ export default function ProductGallery({
             key={i}
             type="button"
             onClick={() => setActive(i)}
-            className={`relative aspect-[4/3] w-24 overflow-hidden rounded-lg border-2 transition-colors ${
+            className={`relative aspect-[4/3] w-20 overflow-hidden rounded-lg border-2 transition-colors ${
               active === i ? "border-primary" : "border-transparent"
             }`}
             aria-label={`Show ${img.alt}`}
@@ -48,7 +51,7 @@ export default function ProductGallery({
               alt={img.alt}
               fill
               className="object-cover"
-              sizes="96px"
+              sizes="80px"
             />
           </button>
         ))}

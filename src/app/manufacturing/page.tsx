@@ -2,13 +2,28 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Button from "@/components/Button";
 import Placeholder from "@/components/Placeholder";
+import JsonLd from "@/components/JsonLd";
 import productionPhoto from "@/assets/production-photograph.png";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Manufacturing | Arshi MediTex",
+export const metadata: Metadata = buildMetadata({
+  title: "Manufacturing Facility | Medical Textile Manufacturer in Rajshahi",
   description:
-    "Arshi MediTex manufactures its products at our facility in Sopura, BSCIC, Rajshahi, Bangladesh, with a focus on quality, durability, and reliable bulk supply.",
-};
+    "Arshi MediTex manufactures medical support belts at our facility in Sopura, BSCIC, Rajshahi, Bangladesh, with a focus on quality, durability, and reliable bulk production for wholesale supply.",
+  path: "/manufacturing",
+  keywords: [
+    "medical textile manufacturer Bangladesh",
+    "medical support products manufacturer",
+    "Sopura BSCIC",
+    "Rajshahi Bangladesh",
+    "bulk medical belts",
+  ],
+});
+
+const breadcrumb = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Manufacturing", path: "/manufacturing" },
+]);
 
 const strengths = [
   {
@@ -39,6 +54,7 @@ const gallery = [
 export default function ManufacturingPage() {
   return (
     <>
+      <JsonLd data={breadcrumb} />
       <section className="bg-light">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-20 text-center">
           <h1 className="text-4xl font-bold text-primary-dark">Our Manufacturing</h1>
@@ -53,7 +69,7 @@ export default function ManufacturingPage() {
           <div className="relative h-80 overflow-hidden rounded-2xl">
             <Image
               src={productionPhoto}
-              alt="Arshi MediTex production floor"
+              alt="Arshi MediTex medical textile manufacturing facility in Sopura, BSCIC, Rajshahi, Bangladesh"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"

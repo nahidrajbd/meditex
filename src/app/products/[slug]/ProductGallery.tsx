@@ -15,10 +15,10 @@ export default function ProductGallery({
   galleryImages,
 }: ProductGalleryProps) {
   const images = [
-    { src: image, alt: name },
+    { src: image, alt: `Arshi MediTex ${name}` },
     ...galleryImages.map((src, i) => ({
       src,
-      alt: `${name} being worn ${i + 1}`,
+      alt: `Arshi MediTex ${name} being worn, view ${i + 1}`,
     })),
   ];
   const [active, setActive] = useState(0);

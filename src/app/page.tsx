@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Button from "@/components/Button";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,11 +7,28 @@ import HeroSlideshow from "@/components/HeroSlideshow";
 import factoryPhoto from "@/assets/Factory-Photograph.png";
 import teamPhoto from "@/assets/team-photograph.png";
 import productionPhoto from "@/assets/production-photograph.png";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Arshi MediTex | Medical Textile & Support Products Manufacturer",
+  description:
+    "Arshi MediTex is a medical textile manufacturer and supplier in Rajshahi, Bangladesh, producing the C-Section Abdominal Belt and Lumbar Support Belt for bulk and wholesale supply to hospitals, clinics, pharmacies, distributors, and international buyers.",
+  path: "/",
+  keywords: [
+    "medical textile manufacturer Bangladesh",
+    "medical textile supplier Bangladesh",
+    "medical support products manufacturer",
+    "medical belt manufacturer Bangladesh",
+    "medical products supplier Bangladesh",
+    "wholesale medical belts",
+    "bulk medical belts",
+  ],
+});
 
 const heroSlides = [
-  { src: factoryPhoto, alt: "Arshi MediTex factory" },
-  { src: productionPhoto, alt: "Arshi MediTex production floor" },
-  { src: teamPhoto, alt: "Arshi MediTex factory team" },
+  { src: factoryPhoto, alt: "Arshi MediTex medical textile manufacturing facility in Rajshahi, Bangladesh" },
+  { src: productionPhoto, alt: "Medical support belt production line at Arshi MediTex factory" },
+  { src: teamPhoto, alt: "Arshi MediTex manufacturing team in Rajshahi, Bangladesh" },
 ];
 
 const trustPoints = [
@@ -90,7 +108,7 @@ export default function Home() {
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-light">
                   <Image
                     src={product.homeImage}
-                    alt={product.name}
+                    alt={`Arshi MediTex ${product.name}`}
                     fill
                     className="object-cover"
                     sizes="(min-width: 640px) 50vw, 100vw"
@@ -114,7 +132,7 @@ export default function Home() {
         <div className="relative h-72 overflow-hidden rounded-2xl order-2 lg:order-1">
           <Image
             src={teamPhoto}
-            alt="Arshi MediTex factory team"
+            alt="Arshi MediTex medical textile manufacturing team in Rajshahi, Bangladesh"
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 50vw, 100vw"
@@ -163,7 +181,7 @@ export default function Home() {
           <div className="relative h-72 overflow-hidden rounded-2xl border border-white/10">
             <Image
               src={productionPhoto}
-              alt="Arshi MediTex production floor"
+              alt="Medical support belt production floor at Arshi MediTex factory"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"

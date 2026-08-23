@@ -2,17 +2,33 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/Button";
+import JsonLd from "@/components/JsonLd";
 import { products } from "@/lib/products";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Products | Arshi MediTex",
+export const metadata: Metadata = buildMetadata({
+  title: "Medical Support Belts | C-Section & Lumbar Support Belt Manufacturer",
   description:
-    "Medical support products manufactured by Arshi MediTex for hospitals, clinics, pharmacies, and distributors: C-Section Abdominal Belt and Lumbar Support Belt.",
-};
+    "Browse medical support products manufactured by Arshi MediTex in Rajshahi, Bangladesh: the C-Section Abdominal Belt and Lumbar Support Belt, supplied in bulk to hospitals, clinics, pharmacies, and distributors.",
+  path: "/products",
+  keywords: [
+    "medical belt manufacturer Bangladesh",
+    "medical support belt manufacturer",
+    "wholesale medical belts",
+    "bulk medical belts",
+    "medical belt supplier Bangladesh",
+  ],
+});
+
+const breadcrumb = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Products", path: "/products" },
+]);
 
 export default function ProductsPage() {
   return (
     <>
+      <JsonLd data={breadcrumb} />
       <section className="bg-light">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-20 text-center">
           <h1 className="text-4xl font-bold text-primary-dark">Our Products</h1>
@@ -38,7 +54,7 @@ export default function ProductsPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-light">
                 <Image
                   src={product.image}
-                  alt={product.name}
+                  alt={`Arshi MediTex ${product.name}`}
                   fill
                   className="object-cover"
                   sizes="(min-width: 640px) 50vw, 100vw"

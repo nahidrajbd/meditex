@@ -20,6 +20,9 @@ export type Product = {
   image: StaticImageData;
   homeImage: StaticImageData;
   galleryImages: StaticImageData[];
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
 };
 
 export const products: Product[] = [
@@ -45,6 +48,18 @@ export const products: Product[] = [
     ],
     idealFor:
       "Hospitals, maternity clinics, pharmacies, medical stores, and healthcare distributors.",
+    metaTitle: "C-Section Abdominal Belt Manufacturer & Supplier | Arshi MediTex",
+    metaDescription:
+      "C-Section Abdominal Belt manufactured by Arshi MediTex in Rajshahi, Bangladesh. Wholesale and bulk supply for hospitals, maternity clinics, pharmacies, and distributors.",
+    keywords: [
+      "C-section abdominal belt",
+      "C-section abdominal belt manufacturer",
+      "C-section belt manufacturer Bangladesh",
+      "C-section abdominal belt supplier",
+      "C-section abdominal belt wholesale",
+      "post C-section abdominal belt",
+      "abdominal support belt manufacturer",
+    ],
   },
   {
     slug: "lumbar-support-belt",
@@ -69,5 +84,17 @@ export const products: Product[] = [
     ],
     idealFor:
       "Hospitals, clinics, pharmacies, medical equipment shops, and healthcare distributors.",
+    metaTitle: "Lumbar Support Belt Manufacturer & Supplier | Arshi MediTex",
+    metaDescription:
+      "Lumbar Support Belt manufactured by Arshi MediTex in Rajshahi, Bangladesh. Wholesale and bulk supply for hospitals, clinics, pharmacies, and distributors.",
+    keywords: [
+      "lumbar support belt",
+      "lumbar support belt manufacturer",
+      "lumbar support belt supplier",
+      "lumbar support belt wholesale",
+      "lumbar support belt Bangladesh",
+      "back support belt manufacturer",
+      "lumbar support belt manufacturer Bangladesh",
+    ],
   },
 ];

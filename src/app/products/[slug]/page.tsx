@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Button from "@/components/Button";
+import JsonLd from "@/components/JsonLd";
 import { products } from "@/lib/products";
+import { buildMetadata, breadcrumbJsonLd, SITE_NAME, SITE_URL } from "@/lib/seo";
 import ProductGallery from "./ProductGallery";
 
 export function generateStaticParams() {
@@ -16,10 +18,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
   if (!product) return {};
-  return {
-    title: `${product.name} | Arshi MediTex`,
-    description: product.intro,
-  };
+  return buildMetadata({
+    title: product.metaTitle,
+    description: product.metaDescription,
+    path: `/products/${product.slug}`,
+    keywords: product.keywords,
+  });
 }
 
 export default async function ProductPage({
@@ -31,8 +35,36 @@ export default async function ProductPage({
   const product = products.find((p) => p.slug === slug);
   if (!product) notFound();
 
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: product.name, path: `/products/${product.slug}` },
+  ]);
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.intro,
+    image: [
+      `${SITE_URL}${product.image.src}`,
+      ...product.galleryImages.map((img) => `${SITE_URL}${img.src}`),
+    ],
+    brand: {
+      "@type": "Brand",
+      name: SITE_NAME,
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: SITE_NAME,
+    },
+    category: "Medical Support Belt",
+  };
+
   return (
     <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-20">
+      <JsonLd data={breadcrumb} />
+      <JsonLd data={productJsonLd} />
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         <ProductGallery
           name={product.name}

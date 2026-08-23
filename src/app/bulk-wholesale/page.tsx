@@ -1,11 +1,26 @@
 import type { Metadata } from "next";
 import Button from "@/components/Button";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Bulk & Wholesale | Arshi MediTex",
+export const metadata: Metadata = buildMetadata({
+  title: "Bulk & Wholesale Medical Belt Supply | Arshi MediTex",
   description:
-    "Arshi MediTex supplies medical support products in bulk to hospitals, clinics, pharmacies, distributors, dealers, exporters, and international buyers.",
-};
+    "Arshi MediTex supplies medical support belts in bulk and wholesale quantities to hospitals, clinics, pharmacies, medical equipment shops, distributors, dealers, exporters, and international buyers from our factory in Rajshahi, Bangladesh.",
+  path: "/bulk-wholesale",
+  keywords: [
+    "wholesale medical belts",
+    "bulk medical belts",
+    "medical belt exporter Bangladesh",
+    "wholesale medical support products",
+    "bulk medical support products",
+  ],
+});
+
+const breadcrumb = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Bulk & Wholesale", path: "/bulk-wholesale" },
+]);
 
 const buyers = [
   { title: "Hospitals", desc: "Medical support products for patient care and hospital supply." },
@@ -26,6 +41,7 @@ const reasons = [
 export default function BulkWholesalePage() {
   return (
     <>
+      <JsonLd data={breadcrumb} />
       <section className="bg-light">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-20 text-center">
           <h1 className="text-4xl font-bold text-primary-dark">

@@ -1,15 +1,29 @@
 import type { Metadata } from "next";
 import ContactForm from "./ContactForm";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Arshi MediTex",
+export const metadata: Metadata = buildMetadata({
+  title: "Contact Arshi MediTex | Medical Textile Manufacturer, Rajshahi",
   description:
-    "Contact Arshi MediTex for bulk supply and business inquiries. Factory: Sopura, BSCIC, Rajshahi, Bangladesh. Phone: 01635994664.",
-};
+    "Contact Arshi MediTex for bulk supply and B2B business inquiries. Factory: Sopura, BSCIC, Rajshahi, Bangladesh. Phone: 01635994664. Email: sales@arshimeditex.com.",
+  path: "/contact",
+  keywords: [
+    "medical textile supplier Bangladesh",
+    "Rajshahi Bangladesh",
+    "medical belt supplier Bangladesh",
+  ],
+});
+
+const breadcrumb = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Contact", path: "/contact" },
+]);
 
 export default function ContactPage() {
   return (
     <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-20">
+      <JsonLd data={breadcrumb} />
       <div className="text-center">
         <h1 className="text-4xl font-bold text-primary-dark">Let&apos;s Work Together</h1>
         <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">

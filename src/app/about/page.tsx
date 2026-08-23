@@ -1,13 +1,27 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Button from "@/components/Button";
+import JsonLd from "@/components/JsonLd";
 import teamPhoto from "@/assets/team-photograph.png";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us | Arshi MediTex",
+export const metadata: Metadata = buildMetadata({
+  title: "About Arshi MediTex | Medical Textile Manufacturer in Rajshahi, Bangladesh",
   description:
-    "Arshi MediTex is a medical textile manufacturer and supplier with around a decade of experience, based in Sopura, BSCIC, Rajshahi, Bangladesh.",
-};
+    "Arshi MediTex is a medical textile manufacturer and supplier with around a decade of experience, based in Sopura, BSCIC, Rajshahi, Bangladesh, serving hospitals, clinics, pharmacies, distributors, and international buyers.",
+  path: "/about",
+  keywords: [
+    "medical textile manufacturer Bangladesh",
+    "medical products manufacturer Bangladesh",
+    "medical equipment supplier Bangladesh",
+    "Rajshahi Bangladesh",
+  ],
+});
+
+const breadcrumb = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+]);
 
 const audiences = [
   "Hospitals",
@@ -23,6 +37,7 @@ const audiences = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={breadcrumb} />
       <section className="bg-light">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-20 text-center">
           <h1 className="text-4xl font-bold text-primary-dark">
@@ -38,7 +53,7 @@ export default function AboutPage() {
         <div className="relative h-80 overflow-hidden rounded-2xl">
           <Image
             src={teamPhoto}
-            alt="Arshi MediTex factory team"
+            alt="Arshi MediTex medical textile manufacturing team in Rajshahi, Bangladesh"
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 50vw, 100vw"

@@ -196,7 +196,7 @@ export default function Home() {
             pharmacy, distribution business, or export market? Contact Arshi
             MediTex for bulk supply and business inquiries.
           </p>
-          <p className="mt-4 text-lg font-semibold text-primary">01711238555</p>
+          <p className="mt-4 text-lg font-semibold text-primary">01635994664</p>
           <div className="mt-8">
             <Button href="/contact">Contact Us</Button>
           </div>

@@ -53,7 +53,8 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
-              <li>01711238555</li>
+              <li>01635994664</li>
+              <li>sales@arshimeditex.com</li>
               <li>Sopura, BSCIC, Rajshahi, Bangladesh</li>
             </ul>
           </div>

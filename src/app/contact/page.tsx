@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us | Arshi MediTex",
   description:
-    "Contact Arshi MediTex for bulk supply and business inquiries. Factory: Sopura, BSCIC, Rajshahi, Bangladesh. Phone: 01711238555.",
+    "Contact Arshi MediTex for bulk supply and business inquiries. Factory: Sopura, BSCIC, Rajshahi, Bangladesh. Phone: 01635994664.",
 };
 
 export default function ContactPage() {
@@ -38,7 +38,13 @@ export default function ContactPage() {
                 <dt className="text-xs font-semibold uppercase tracking-wide text-primary/60">
                   Phone
                 </dt>
-                <dd className="mt-1 text-sm text-foreground/80">01711238555</dd>
+                <dd className="mt-1 text-sm text-foreground/80">01635994664</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-primary/60">
+                  Email
+                </dt>
+                <dd className="mt-1 text-sm text-foreground/80">sales@arshimeditex.com</dd>
               </div>
               <div>
                 <dt className="text-xs font-semibold uppercase tracking-wide text-primary/60">

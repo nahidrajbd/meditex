@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import Button from "@/components/Button";
 import { products } from "@/lib/products";
+import ProductGallery from "./ProductGallery";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -34,16 +34,11 @@ export default async function ProductPage({
   return (
     <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-20">
       <div className="grid lg:grid-cols-2 gap-12 items-start">
-        <div className="relative aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl bg-light">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            className="object-cover"
-            sizes="(min-width: 1024px) 40vw, 100vw"
-            priority
-          />
-        </div>
+        <ProductGallery
+          name={product.name}
+          image={product.image}
+          galleryImage={product.galleryImage}
+        />
         <div>
           <h1 className="text-3xl font-bold text-primary-dark">{product.name}</h1>
           <p className="mt-2 text-lg font-medium text-primary">{product.tagline}</p>

@@ -35,7 +35,7 @@ export default function ProductsPage() {
               href={`/products/${product.slug}`}
               className="group rounded-2xl bg-white p-6 border border-primary/10 hover:shadow-lg transition-shadow"
             >
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-light">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-light">
                 <Image
                   src={product.image}
                   alt={product.name}

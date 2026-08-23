@@ -1,6 +1,8 @@
-import abdominalSupportImage from "@/assets/arshi_meditex_abdominal_support_model.png";
-import lumbarSupportImage from "@/assets/arshi_meditex_lumbar_support_model.png";
 import type { StaticImageData } from "next/image";
+import cSectionBelt from "@/assets/c-section-belt.png";
+import cSectionBeltWithModel from "@/assets/c-section-belt-with-model.png";
+import lumbarSupportBelt from "@/assets/lumbar-support-belt.png";
+import lumbarSupportBeltWithModel from "@/assets/lumbar-support-belt-with-model.png";
 
 export type Product = {
   slug: string;
@@ -10,13 +12,15 @@ export type Product = {
   features: string[];
   idealFor: string;
   image: StaticImageData;
+  galleryImage: StaticImageData;
 };
 
 export const products: Product[] = [
   {
     slug: "c-section-abdominal-belt",
     name: "C-Section Abdominal Belt",
-    image: abdominalSupportImage,
+    image: cSectionBelt,
+    galleryImage: cSectionBeltWithModel,
     tagline: "Comfortable Abdominal Support for Post-C-Section Use",
     intro:
       "Our C-Section Abdominal Belt is designed to provide comfortable support around the abdominal area after C-section surgery.",
@@ -33,7 +37,8 @@ export const products: Product[] = [
   {
     slug: "lumbar-support-belt",
     name: "Lumbar Support Belt",
-    image: lumbarSupportImage,
+    image: lumbarSupportBelt,
+    galleryImage: lumbarSupportBeltWithModel,
     tagline: "Reliable Support for the Lower Back",
     intro:
       "Our Lumbar Support Belt is designed to provide comfortable support around the lower back and waist. Its adjustable design helps provide a secure and comfortable fit.",

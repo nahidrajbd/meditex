@@ -2,9 +2,16 @@ import Button from "@/components/Button";
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/lib/products";
+import HeroSlideshow from "@/components/HeroSlideshow";
 import factoryPhoto from "@/assets/Factory-Photograph.png";
 import teamPhoto from "@/assets/team-photograph.png";
 import productionPhoto from "@/assets/production-photograph.png";
+
+const heroSlides = [
+  { src: factoryPhoto, alt: "Arshi MediTex factory" },
+  { src: productionPhoto, alt: "Arshi MediTex production floor" },
+  { src: teamPhoto, alt: "Arshi MediTex factory team" },
+];
 
 const trustPoints = [
   { title: "10+ Years of Experience", desc: "Medical textile manufacturing and supply" },
@@ -51,16 +58,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative h-80 lg:h-[26rem] overflow-hidden rounded-2xl">
-            <Image
-              src={factoryPhoto}
-              alt="Arshi MediTex factory"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              priority
-            />
-          </div>
+          <HeroSlideshow slides={heroSlides} className="h-80 lg:h-[26rem]" />
         </div>
       </section>
 

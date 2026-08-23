@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Button from "@/components/Button";
 import Placeholder from "@/components/Placeholder";
+import productionPhoto from "@/assets/production-photograph.png";
 
 export const metadata: Metadata = {
   title: "Manufacturing | Arshi MediTex",
@@ -48,7 +50,15 @@ export default function ManufacturingPage() {
 
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <Placeholder label="Factory Overview Photograph" className="h-80" tone="primary" />
+          <div className="relative h-80 overflow-hidden rounded-2xl">
+            <Image
+              src={productionPhoto}
+              alt="Arshi MediTex production floor"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
           <div>
             <p className="text-foreground/70">
               Arshi MediTex manufactures its products at our facility in{" "}

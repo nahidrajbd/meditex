@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Button from "@/components/Button";
-import Placeholder from "@/components/Placeholder";
+import teamPhoto from "@/assets/team-photograph.png";
 
 export const metadata: Metadata = {
   title: "About Us | Arshi MediTex",
@@ -34,7 +35,15 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-12 items-center">
-        <Placeholder label="Factory / Team Photograph" className="h-80" />
+        <div className="relative h-80 overflow-hidden rounded-2xl">
+          <Image
+            src={teamPhoto}
+            alt="Arshi MediTex factory team"
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+        </div>
         <div>
           <p className="text-foreground/70">
             Arshi MediTex is a medical textile manufacturer and supplier with

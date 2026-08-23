@@ -1,8 +1,10 @@
 import Button from "@/components/Button";
-import Placeholder from "@/components/Placeholder";
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/lib/products";
+import factoryPhoto from "@/assets/Factory-Photograph.png";
+import teamPhoto from "@/assets/team-photograph.png";
+import productionPhoto from "@/assets/production-photograph.png";
 
 const trustPoints = [
   { title: "10+ Years of Experience", desc: "Medical textile manufacturing and supply" },
@@ -49,7 +51,16 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <Placeholder label="Factory / Product Photograph" className="h-80 lg:h-[26rem]" tone="primary" />
+          <div className="relative h-80 lg:h-[26rem] overflow-hidden rounded-2xl">
+            <Image
+              src={factoryPhoto}
+              alt="Arshi MediTex factory"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              priority
+            />
+          </div>
         </div>
       </section>
 
@@ -102,7 +113,15 @@ export default function Home() {
 
       {/* About */}
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
-        <Placeholder label="Factory / Team Photograph" className="h-72 order-2 lg:order-1" />
+        <div className="relative h-72 overflow-hidden rounded-2xl order-2 lg:order-1">
+          <Image
+            src={teamPhoto}
+            alt="Arshi MediTex factory team"
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+        </div>
         <div className="order-1 lg:order-2">
           <h2 className="text-3xl font-bold text-primary-dark">
             Built on Experience. Focused on Quality.
@@ -143,7 +162,15 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <Placeholder label="Factory Production Photograph" className="h-72 bg-white/10 text-white/70 border border-white/10" />
+          <div className="relative h-72 overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src={productionPhoto}
+              alt="Arshi MediTex production floor"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
         </div>
       </section>
 

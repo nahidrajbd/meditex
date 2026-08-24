@@ -12,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/manufacturing", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/bulk-wholesale", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/contact", priority: 0.6, changeFrequency: "yearly" as const },
+    { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "/refund-policy", priority: 0.3, changeFrequency: "yearly" as const },
   ];
 
   const productPaths = products.map((product) => ({

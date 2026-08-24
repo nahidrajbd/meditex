@@ -60,13 +60,23 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div className="mt-12 border-t border-white/10 pt-6 flex flex-col gap-3">
           <p className="text-xs font-medium text-accent">
             Manufactured in Bangladesh | Bulk Supply | International Inquiries Welcome
           </p>
-          <p className="text-xs text-white/50">
-            © 2026 Arshi MediTex. All Rights Reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <p className="text-xs text-white/50">
+              © 2026 Arshi MediTex. All Rights Reserved.
+            </p>
+            <div className="flex gap-4 text-xs text-white/50">
+              <Link href="/privacy-policy" className="hover:text-accent">
+                Privacy Policy
+              </Link>
+              <Link href="/refund-policy" className="hover:text-accent">
+                Refund Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

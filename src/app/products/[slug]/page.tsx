@@ -50,6 +50,7 @@ export default async function ProductPage({
       `${SITE_URL}${product.image.src}`,
       ...product.galleryImages.map((img) => `${SITE_URL}${img.src}`),
     ],
+    alternateName: product.alternateNames,
     brand: {
       "@type": "Brand",
       name: SITE_NAME,
@@ -88,6 +89,10 @@ export default async function ProductPage({
 
           <h2 className="mt-8 text-lg font-semibold text-primary-dark">Ideal For</h2>
           <p className="mt-3 text-sm text-foreground/70">{product.idealFor}</p>
+
+          <p className="mt-6 text-xs text-foreground/50">
+            Also searched as: {product.alternateNames.join(", ")}
+          </p>
 
           <div className="mt-10">
             <Button href="/bulk-wholesale">Request Bulk Supply</Button>

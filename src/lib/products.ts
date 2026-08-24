@@ -23,6 +23,7 @@ export type Product = {
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
+  alternateNames: string[];
 };
 
 export const products: Product[] = [
@@ -50,7 +51,7 @@ export const products: Product[] = [
       "Hospitals, maternity clinics, pharmacies, medical stores, and healthcare distributors.",
     metaTitle: "C-Section Abdominal Belt Manufacturer & Supplier | Arshi MediTex",
     metaDescription:
-      "C-Section Abdominal Belt manufactured by Arshi MediTex in Rajshahi, Bangladesh. Wholesale and bulk supply for hospitals, maternity clinics, pharmacies, and distributors.",
+      "C-Section Abdominal Belt (also searched as a post-pregnancy maternity belt or abdominal binder) manufactured by Arshi MediTex in Rajshahi, Bangladesh. Wholesale and bulk supply for hospitals, maternity clinics, pharmacies, and distributors.",
     keywords: [
       "C-section abdominal belt",
       "C-section abdominal belt manufacturer",
@@ -59,6 +60,22 @@ export const products: Product[] = [
       "C-section abdominal belt wholesale",
       "post C-section abdominal belt",
       "abdominal support belt manufacturer",
+      "post-pregnancy maternity belt",
+      "pregnancy belt after delivery",
+      "cesarean belt",
+      "abdominal binder belt",
+      "mother care belt",
+      "after baby delivery belt",
+      "mother slimming belt",
+    ],
+    alternateNames: [
+      "Post-Pregnancy Maternity Belt",
+      "Pregnancy Belt After Delivery / C-Section",
+      "Cesarean Belt",
+      "Abdominal Binder Belt",
+      "Mother Care Belt",
+      "After Baby Delivery Belt",
+      "Mother Slimming Belt",
     ],
   },
   {
@@ -86,7 +103,7 @@ export const products: Product[] = [
       "Hospitals, clinics, pharmacies, medical equipment shops, and healthcare distributors.",
     metaTitle: "Lumbar Support Belt Manufacturer & Supplier | Arshi MediTex",
     metaDescription:
-      "Lumbar Support Belt manufactured by Arshi MediTex in Rajshahi, Bangladesh. Wholesale and bulk supply for hospitals, clinics, pharmacies, and distributors.",
+      "Lumbar Support Belt (also searched as a back support belt or posture correction belt) manufactured by Arshi MediTex in Rajshahi, Bangladesh. Wholesale and bulk supply for hospitals, clinics, pharmacies, and distributors.",
     keywords: [
       "lumbar support belt",
       "lumbar support belt manufacturer",
@@ -95,6 +112,19 @@ export const products: Product[] = [
       "lumbar support belt Bangladesh",
       "back support belt manufacturer",
       "lumbar support belt manufacturer Bangladesh",
+      "spine support belt",
+      "posture correction belt",
+      "back pain relief belt",
+      "posture support straps",
+      "lumbar sacro support belt",
+    ],
+    alternateNames: [
+      "Shoulder Lumbar Brace",
+      "Spine Support Belt",
+      "Adjustable Posture Correction Belt",
+      "Back Pain Relief Belt",
+      "Posture Support Straps",
+      "Lumbar Sacro Corset (LS Support Belt)",
     ],
   },
 ];

@@ -60,6 +60,41 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-white/50">
+            Arshi Group Sister Concerns
+          </h4>
+          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
+            <li>
+              <a href="https://arshimedicalbazar.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                Arshi Medical Supply
+              </a>
+            </li>
+            <li>
+              <a href="https://arshicar.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                Arshi Automobile &amp; Car Hub
+              </a>
+            </li>
+            <li>
+              <a href="https://arshicity.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                Arshi Platinum City
+              </a>
+            </li>
+            <li>
+              <a href="https://arshiglobalcare.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                Arshi Global Care
+              </a>
+            </li>
+            <li>
+              <a href="https://halimasobhan.org" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                Halima Sobhan Foundation
+              </a>
+            </li>
+            <li className="text-white/50">Arshi Engineering and Technology</li>
+            <li className="text-white/50">Arshi Hajj Kafela</li>
+          </ul>
+        </div>
+
         <div className="mt-12 border-t border-white/10 pt-6 flex flex-col gap-3">
           <p className="text-xs font-medium text-accent">
             Manufactured in Bangladesh | Bulk Supply | International Inquiries Welcome

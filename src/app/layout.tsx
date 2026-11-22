@@ -31,56 +31,54 @@ export const metadata: Metadata = {
   },
 };
 
-const organizationJsonLd = {
+const siteJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: SITE_NAME,
-  url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
-  description:
-    "Manufacturer and supplier of medical textile support products, based in Rajshahi, Bangladesh, serving hospitals, clinics, pharmacies, distributors, dealers, exporters, and international buyers.",
-  email: SITE_EMAIL,
-  telephone: SITE_PHONE,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Sopura, BSCIC",
-    addressLocality: "Rajshahi",
-    addressCountry: "BD",
-  },
-};
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: SITE_NAME,
-  url: SITE_URL,
-};
-
-const localBusinessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: SITE_NAME,
-  image: `${SITE_URL}${OG_IMAGE}`,
-  url: SITE_URL,
-  email: SITE_EMAIL,
-  telephone: SITE_PHONE,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Sopura, BSCIC",
-    addressLocality: "Rajshahi",
-    addressCountry: "BD",
-  },
-  description:
-    "Medical textile manufacturing facility in Sopura, BSCIC, Rajshahi, Bangladesh, producing medical support belts for bulk and wholesale B2B supply.",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      image: OG_IMAGE,
+      description:
+        "Manufacturer and bulk supplier of medical textile support products, based in Rajshahi, Bangladesh, serving hospitals, clinics, pharmacies, distributors, and international buyers.",
+      email: SITE_EMAIL,
+      telephone: SITE_PHONE,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Sopura, BSCIC",
+        addressLocality: "Rajshahi",
+        addressCountry: "BD",
+      },
+      parentOrganization: {
+        "@type": "Organization",
+        name: "Arshi Group",
+      },
+      areaServed: [{ "@type": "Country", name: "Bangladesh" }, "Worldwide"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: SITE_EMAIL,
+        telephone: SITE_PHONE,
+        contactType: "sales",
+        areaServed: [{ "@type": "Country", name: "Bangladesh" }, "Worldwide"],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <JsonLd data={organizationJsonLd} />
-        <JsonLd data={websiteJsonLd} />
-        <JsonLd data={localBusinessJsonLd} />
+        <JsonLd data={siteJsonLd} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

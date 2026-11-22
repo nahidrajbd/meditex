@@ -6,7 +6,7 @@ export const SITE_PHONE = "+8801635994664";
 export const SITE_PHONE_DISPLAY = "01635994664";
 export const SITE_EMAIL = "sales@arshimeditex.com";
 export const FACTORY_ADDRESS = "Sopura, BSCIC, Rajshahi, Bangladesh";
-export const OG_IMAGE = "/og-image.png";
+export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 type PageMetadataInput = {
   title: string;
